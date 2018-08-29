@@ -118,7 +118,7 @@ section {
 }
 
 h1 {
-  width: 100%;
+  width: 50%;
   text-align: center;
   margin: 5px 0;
   font-size: 1.5rem;
@@ -142,6 +142,9 @@ h1 {
   cursor: auto;
 }
 
+section > p {
+  margin: 15px 35px 0 0;
+}
 
 
 
