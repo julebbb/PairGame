@@ -1,7 +1,10 @@
+
+
 var container = document.getElementsByClassName('unactive');
 var source = ["img/img1.jpg", "img/img2.jpg", "img/img3.jpg", "img/img4.jpg", "img/img5.jpg", "img/img6.jpg", "img/img7.jpg", "img/img7.jpg", "img/img6.jpg", "img/img5.jpg", "img/img4.jpg", "img/img3.jpg", "img/img2.jpg", "img/img1.jpg"];
 var timeP = document.getElementsByTagName('p')[0];
 var clickTap = document.getElementsByTagName('p')[1];
+var imgActivate = document.getElementsByClassName('active');
 
 var historique = new Array ([]);
 var imageSelect = new Array ();
@@ -65,6 +68,7 @@ for (let i = 0; i < container.length; i++) {
       };
 }
 
+
 function game(image, srcSelect) {
     if (image !== imageSelect[0]) {
       //take img in a table
@@ -105,6 +109,16 @@ function pairs() {
   //reset table
   imageSelect = [];
   sourceImg = [];
+
+  if (imgActivate.length === 14) {
+    //stop time
+    clearInterval(time);
+    //take off all img
+    for (var i = 0; i < imgActivate.length; i++) {
+      imgActivate[i].parentNode.style.display = "none";
+    }
+
+  }
 }
 
 
