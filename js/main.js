@@ -31,7 +31,6 @@ buttonRetry.innerHTML = "Recommencer"
 buttonRetry.href = "index.html";
 buttonRetry.target = "_self";
 
-console.log(buttonRetry);
 
 var time = setInterval(timeFunction, 1000);
 
