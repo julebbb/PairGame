@@ -154,7 +154,25 @@ div img {
   opacity: 0;
 }
 
+.retry  {
+  background: rgb(60, 86, 42);
+  color: darkkhaki;
+  padding: 10px;
+  border-radius: 2px;
+  text-decoration: none;
+  margin: 10px 0;
+  border: 1px solid darkkhaki;
+}
 
+.retry:active, .retry:hover {
+  background: rgb(91, 100, 60);
+  border: 1px solid burlywood;
+  color: burlywood;
+}
+
+.retry:active {
+  box-shadow: 1px 0px 6px black inset;
+}
 
 section > p {
   width: 100%;

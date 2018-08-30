@@ -1,12 +1,10 @@
-
-
 var container = document.getElementsByClassName('unactive');
 var source = ["img/img1.jpg", "img/img2.jpg", "img/img3.jpg", "img/img4.jpg", "img/img5.jpg", "img/img6.jpg", "img/img7.jpg", "img/img7.jpg", "img/img6.jpg", "img/img5.jpg", "img/img4.jpg", "img/img3.jpg", "img/img2.jpg", "img/img1.jpg"];
+
 var timeP = document.getElementsByTagName('p')[0];
 var clickTap = document.getElementsByTagName('p')[1];
 var imgActivate = document.getElementsByClassName('active');
 
-var historique = new Array ([]);
 var imageSelect = new Array ();
 var sourceImg =  new Array ();
 var pair = new Array ([]);
@@ -20,6 +18,20 @@ var click = 0;
 var hours = 0;
 var minutes = 0;
 var secondes = 0;
+
+var buttonRetry = document.createElement('a');
+var targetRetry = document.createAttribute("target");
+var linkRetry = document.createAttribute("href");
+
+buttonRetry.setAttributeNode(linkRetry);
+buttonRetry.setAttributeNode(targetRetry);
+buttonRetry.className = "retry";
+buttonRetry.innerHTML = "Recommencer"
+
+buttonRetry.href = "index.html";
+buttonRetry.target = "_self";
+
+console.log(buttonRetry);
 
 var time = setInterval(timeFunction, 1000);
 
@@ -62,8 +74,13 @@ for (let i = 0; i < container.length; i++) {
       sourceSelect= source[i];
       game(this, sourceSelect);
       click++;
+      if (imgActivate.length === 14) {
+        clickTap.innerHTML = "Bravo tu as réussi en " + click + " coups !";
+        clickTap.parentNode.appendChild(buttonRetry);
 
-      clickTap.innerHTML = "Nombres de click : " + click;
+      } else {
+        clickTap.innerHTML = "Nombres de click : " + click;
+      }
 
       };
 }
@@ -113,11 +130,13 @@ function pairs() {
   if (imgActivate.length === 14) {
     //stop time
     clearInterval(time);
+
+
+
     //take off all img
     for (var i = 0; i < imgActivate.length; i++) {
       imgActivate[i].parentNode.style.display = "none";
     }
-
   }
 }
 
