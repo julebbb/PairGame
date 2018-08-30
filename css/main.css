@@ -99,7 +99,6 @@ textarea {
 
 body {
   color: darkkhaki;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -185,7 +184,7 @@ section > p {
 --------------------------------*/
 
 /* Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) {
+@media (min-width: 576px min-height ) {
  div {
    background-size: 26vw;
  }
