@@ -7,7 +7,6 @@ var imgActivate = document.getElementsByClassName('active');
 
 var imageSelect = new Array ();
 var sourceImg =  new Array ();
-var pair = new Array ([]);
 var racourcie = "nothing";
 var sourceSelect = 0;
 
@@ -19,6 +18,7 @@ var hours = 0;
 var minutes = 0;
 var secondes = 0;
 
+//create a button in the end of the game for retry
 var buttonRetry = document.createElement('a');
 var targetRetry = document.createAttribute("target");
 var linkRetry = document.createAttribute("href");
@@ -70,10 +70,15 @@ for (var i = source.length - 1; i > 0; i--) {
 
 for (let i = 0; i < container.length; i++) {
    container[i].onclick = function(){
-      sourceSelect= source[i];
+
+      sourceSelect = source[i];
+
       game(this, sourceSelect);
+
       click++;
+
       if (imgActivate.length === 14) {
+
         clickTap.innerHTML = "Bravo tu as réussi en " + click + " coups !";
         clickTap.parentNode.appendChild(buttonRetry);
 
@@ -86,6 +91,7 @@ for (let i = 0; i < container.length; i++) {
 
 
 function game(image, srcSelect) {
+
     if (image !== imageSelect[0]) {
       //take img in a table
        imageSelect.push(image);
@@ -93,7 +99,6 @@ function game(image, srcSelect) {
        //take source of img
        image.src = srcSelect;
        sourceImg.push(image.src);
-
        //make image visible
        image.style.opacity = 1;
        //take element like in source table
@@ -111,7 +116,6 @@ function game(image, srcSelect) {
 
        }
     }
-
 
 }
 
